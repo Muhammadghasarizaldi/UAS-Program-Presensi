@@ -1,0 +1,235 @@
+/* ============================
+   ROOT & GLOBAL STYLE
+============================ */
+:root{
+  --bg:#0f1724;
+  --card:#0b1220;
+  --muted:#9aa4b2;
+  --accent:#6ee7b7;
+  --accent-2:#60a5fa;
+  --glass: rgba(255,255,255,0.06);
+  --glass-2: rgba(255,255,255,0.10);
+  --danger:#ff6b6b;
+  --success:#4ade80;
+  --radius:14px;
+  --maxw:900px;
+  font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
+
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
+
+html,body{
+  height:100%;
+}
+
+body{
+  margin:0;
+  background: radial-gradient(circle at top, #13203c, #0a1120 60%, #050a12);
+  color: #e7eef9;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:32px;
+  overflow-x:hidden;
+}
+
+/* ============================
+   LAYOUT
+============================ */
+.container{
+  width:100%;
+  max-width: var(--maxw);
+}
+
+/* ============================
+   CARD
+============================ */
+.card{
+  background: linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02));
+  border-radius: var(--radius);
+  padding: 32px;
+  border: 1px solid rgba(255,255,255,0.08);
+  box-shadow: 0 10px 40px rgba(0,0,0,0.45);
+  backdrop-filter: blur(12px);
+  animation: fadeIn 0.5s ease forwards;
+}
+
+@keyframes fadeIn {
+  from { opacity:0; transform: translateY(10px); }
+  to   { opacity:1; transform: translateY(0); }
+}
+
+/* ============================
+   CARD HEADER
+============================ */
+.card-head h1{
+  margin:0 0 8px 0;
+  font-size:26px;
+  font-weight:700;
+  color:#fff;
+}
+
+.subtitle{
+  margin:0;
+  color:var(--muted);
+  font-size:14px;
+}
+
+/* ============================
+   FORM INPUTS
+============================ */
+.form{
+  margin-top:22px;
+  display:flex;
+  flex-direction:column;
+  gap:16px;
+}
+
+.label{
+  font-size:14px;
+  color:var(--muted);
+}
+
+.input{
+  padding:12px 15px;
+  border-radius:12px;
+  border:1px solid rgba(255,255,255,0.08);
+  background:var(--glass);
+  color:inherit;
+  outline:none;
+  font-size:15px;
+  transition:0.2s;
+}
+
+.input:hover{
+  border-color:var(--accent-2);
+}
+
+.input:focus{
+  background:var(--glass-2);
+  box-shadow: 0 6px 20px rgba(96,165,250,0.12);
+  border-color: var(--accent-2);
+}
+
+/* ============================
+   BUTTONS
+============================ */
+.actions{
+  display:flex;
+  gap:12px;
+  margin-top:8px;
+}
+
+.btn{
+  display:inline-block;
+  padding:11px 16px;
+  border-radius:12px;
+  text-decoration:none;
+  border: none;
+  cursor:pointer;
+  font-weight:600;
+  transition:0.25s;
+  font-size:14px;
+}
+
+.btn.primary{
+  background: linear-gradient(90deg,var(--accent), var(--accent-2));
+  color:#022;
+}
+.btn.primary:hover{
+  filter:brightness(1.1);
+  transform: translateY(-1px);
+}
+
+.btn.ghost{
+  background:transparent;
+  color:var(--muted);
+  border:1px solid rgba(255,255,255,0.08);
+}
+.btn.ghost:hover{
+  border-color:rgba(255,255,255,0.3);
+  color:#fff;
+}
+
+.btn.danger{
+  background: linear-gradient(90deg,var(--danger), #ff8787);
+  color:#1d0000;
+}
+.btn.danger:hover{
+  filter:brightness(1.15);
+}
+
+/* ============================
+   TABLE
+============================ */
+.table-wrap{
+  overflow:auto;
+  margin-top:18px;
+  border-radius:12px;
+  border:1px solid rgba(255,255,255,0.06);
+  backdrop-filter: blur(8px);
+}
+
+.presensi-table{
+  width:100%;
+  border-collapse:collapse;
+  min-width: 540px;
+  background: rgba(255,255,255,0.02);
+}
+
+.presensi-table th,
+.presensi-table td{
+  padding:14px 16px;
+  text-align:left;
+  border-bottom:1px solid rgba(255,255,255,0.05);
+  font-size:15px;
+}
+
+.presensi-table thead th{
+  color:var(--muted);
+  font-size:13px;
+  letter-spacing:0.5px;
+  text-transform:uppercase;
+}
+
+.presensi-table tbody tr:hover{
+  background: rgba(255,255,255,0.06);
+}
+
+/* ============================
+   EMPTY STATE
+============================ */
+.empty{
+  color:var(--muted);
+  margin-top:16px;
+  text-align:center;
+}
+
+/* ============================
+   FOOTER BRANDING
+============================ */
+.note{
+  margin-top:14px;
+  color:var(--muted);
+  font-size:13px;
+}
+
+.brand{
+  margin-top:12px;
+  text-align:center;
+  color: rgba(255,255,255,0.5);
+  font-size:12px;
+}
+
+/* ============================
+   RESPONSIVE
+============================ */
+@media (max-width:640px){
+  .card{ padding:22px }
+  .presensi-table{ min-width:360px }
+  .card-head h1{ font-size:22px }
+}

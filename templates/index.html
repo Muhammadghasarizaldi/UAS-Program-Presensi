@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Presensi Web</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <main class="container">
+    <section class="card">
+      <div class="card-head">
+        <h1>Aplikasi Presensi</h1>
+        <p class="subtitle">Catat kehadiran dengan cepat — bebas dan gratis</p>
+      </div>
+
+      <form action="{{ url_for('add') }}" method="post" class="form">
+
+        <label class="label">Nama</label>
+        <input name="nama" class="input" placeholder="Masukkan nama lengkap" required>
+
+        <label class="label">NIM</label>
+        <input name="nim" class="input" placeholder="Masukkan NIM" required>
+
+        <div class="actions">
+          <button class="btn primary" type="submit">Presensi Sekarang</button>
+          <a class="btn ghost" href="{{ url_for('view') }}">Lihat Daftar Presensi</a>
+        </div>
+      </form>
+
+      <footer class="note">
+        <small>Waktu tercatat otomatis saat kamu menekan tombol <strong>Presensi Sekarang</strong>.</small>
+      </footer>
+    </section>
+    <div class="brand">Made with ♥</div>
+  </main>
+</body>
+</html>
