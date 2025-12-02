@@ -1,4 +1,4 @@
-# Presensi & Counting - Project Bundle
+# Presensi 
 
 Folder ini berisi aplikasi Presensi dan Counting dalam tiga varian:
 - CLI (command-line)
